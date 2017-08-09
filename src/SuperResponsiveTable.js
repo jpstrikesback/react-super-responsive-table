@@ -28,7 +28,7 @@ export class Table extends React.Component {
     const classes = (this.props.className || '') + ' responsiveTable'
     return (
       <TableContext headers={headers}>
-        <table {...allowed(this.props)} className={classes} />
+        <table {...this.props} className={classes} />
       </TableContext>
     )
   }
@@ -53,7 +53,7 @@ class TrInner extends React.Component {
   render () {
     const {children} = this.props
     return (
-      <tr {...allowed(this.props)}>
+      <tr {...this.props}>
         {children && React.Children.map(children, (child, i) => React.cloneElement(child, {
           key: i,
           columnKey: i
@@ -69,7 +69,7 @@ export const Tbody = (props) => <tbody {...allowed(props)} />
 
 class TdInner extends React.Component {
   render () {
-    if (this.props.colSpan) { return <td {...allowed(this.props)} /> }
+    if (this.props.colSpan) { return <td {...this.props} /> }
     const {responsiveTable: {
 				headers
 			}, children, columnKey} = this.props

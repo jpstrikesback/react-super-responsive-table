@@ -69,7 +69,7 @@ var Table = (function (_React$Component) {
       return _react2['default'].createElement(
         TableContext,
         { headers: headers },
-        _react2['default'].createElement('table', _extends({}, allowed(this.props), { className: classes }))
+        _react2['default'].createElement('table', _extends({}, this.props, { className: classes }))
       );
     }
   }]);
@@ -111,7 +111,7 @@ var TrInner = (function (_React$Component2) {
 
       return _react2['default'].createElement(
         'tr',
-        allowed(this.props),
+        this.props,
         children && _react2['default'].Children.map(children, function (child, i) {
           return _react2['default'].cloneElement(child, {
             key: i,
@@ -150,7 +150,7 @@ var TdInner = (function (_React$Component3) {
     key: 'render',
     value: function render() {
       if (this.props.colSpan) {
-        return _react2['default'].createElement('td', allowed(this.props));
+        return _react2['default'].createElement('td', this.props);
       }
       var _props = this.props;
       var headers = _props.responsiveTable.headers;
